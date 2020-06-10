@@ -1,5 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_forgery_protection
+  skip_before_action :verify_authenticity_token
+  before_action :allow_all
+  def allow_all
+    headers['Access-Control-Allow-Origin'] = '*'
+  end
 
   # GET /items
   # GET /items.json
