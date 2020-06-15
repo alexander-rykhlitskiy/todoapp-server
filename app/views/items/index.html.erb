@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Done</th>
       <th>Category</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td>
         <td><%= item.title %></td>
         <td><%= item.done %></td>
         <td><%= item.category %></td>
