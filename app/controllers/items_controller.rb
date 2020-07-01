@@ -2,6 +2,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   skip_forgery_protection
 
+  def timeout
+    sleep 2
+    render json: { text: 'finished' }
+  end
+
   # GET /items
   # GET /items.json
   def index
